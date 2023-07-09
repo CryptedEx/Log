@@ -4,7 +4,13 @@ document.getElementById("webhook-form").addEventListener("submit", function(even
   var webhookUrl = document.getElementById("webhook-input").value;
   var loggerLink = window.location.href + "logger.php?webhook=" + encodeURIComponent(webhookUrl);
 
-  document.getElementById("logger-link").innerHTML = "Your IP Logger link: <a href='" + loggerLink + "'>" + loggerLink + "</a>";
+  var loggerLinkElement = document.createElement("a");
+  loggerLinkElement.href = loggerLink;
+  loggerLinkElement.textContent = loggerLink;
+  loggerLinkElement.target = "_blank";
+
+  document.getElementById("logger-link").innerHTML = "Your IP Logger link: ";
+  document.getElementById("logger-link").appendChild(loggerLinkElement);
 
   fetch("https://api.ipify.org?format=json")
     .then(function(response) {
