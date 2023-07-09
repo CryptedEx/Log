@@ -25,6 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       }
     }
   }
+
+  // Redirect back to the page after processing the form
+  header("Location: {$_SERVER['REQUEST_URI']}");
+  exit;
 }
 
 $webhooks = file('webhooks.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
