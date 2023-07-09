@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IP Logger Generator</title>
+</head>
+<body>
+  <h1>IP Logger Generator</h1>
+  <form id="webhook-form" method="POST" action="logger.php">
+    <label for="webhook-input">Webhook URL:</label>
+    <input type="text" id="webhook-input" name="webhook" required>
+    <button type="submit">Generate IP Logger</button>
+  </form>
+
+  <div id="logger-link"></div>
+
+  <h2>Remove Webhook</h2>
+  <form id="remove-webhook-form" method="POST" action="logger.php">
+    <label for="remove-webhook-input">Webhook URL:</label>
+    <input type="text" id="remove-webhook-input" name="remove-webhook" required>
+    <button type="submit">Remove Webhook</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
