@@ -8,6 +8,7 @@ document.getElementById("webhook-form").addEventListener("submit", function(even
   loggerLinkElement.href = loggerLink;
   loggerLinkElement.textContent = loggerLink;
   loggerLinkElement.target = "_blank";
+  loggerLinkElement.download = "";
 
   document.getElementById("logger-link").innerHTML = "Your IP Logger link: ";
   document.getElementById("logger-link").appendChild(loggerLinkElement);
